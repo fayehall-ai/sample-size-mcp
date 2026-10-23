@@ -1,0 +1,31 @@
+[project]
+name = "sample-size-mcp"
+version = "0.1.0"
+description = "How many eval cases you need to trust that model A beats model B"
+readme = "README.md"
+authors = [
+    { name = "Faye Hall", email = "fayedaihall@gmail.com" }
+]
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["mcp", "llm", "evals", "statistics", "sample-size", "power-analysis"]
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=2.3",
+]
+
+[project.urls]
+Repository = "https://github.com/fayehall-ai/sample-size-mcp"
+
+[project.scripts]
+evalsize = "sample_size_mcp.cli:main"
+sample-size-mcp = "sample_size_mcp.server:main"
+
+[build-system]
+requires = ["uv_build>=0.8.22,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
